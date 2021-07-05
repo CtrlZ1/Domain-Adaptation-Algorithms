@@ -6,9 +6,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
 
 # Contents
 
-- [Installation](#installation)
-- [Implementations](#Implementations)
-  - [GAN](#Generative Adversarial Nets)
+[TOC]
 
 ## Installation
 
@@ -19,18 +17,18 @@ $ git clone https://github.com/CtrlZ1/transferLearningAlgorithms.git
 
 # Implementations
 
-### Generative Adversarial Nets
+## GAN——Generative Adversarial Nets
 
-#### Times
+**Times**
 
 2014 NIPS
 
-#### Authors
+**Authors**
 
 Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley,
 Sherjil Ozair, Aaron Courville, Y oshua Bengio
 
-#### Abstract
+**Abstract**
 
 We propose a new framework for estimating generative models via an adversarial 
 process, in which we simultaneously train two models: a generative model G that 
@@ -46,10 +44,10 @@ inference networks during either training or generation of samples. Experiments
 demonstrate the potential of the framework through qualitative and quantitative 
 evaluation of the generated samples.
 
-#### Content introduction
+**Content introduction**
 
 https://blog.csdn.net/qq_41076797/article/details/118483802
 
-#### Paper address
+**Paper address**
 
 https://arxiv.org/abs/1406.2661
