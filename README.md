@@ -9,7 +9,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
 - [Contents](#contents)
 - [Installation](#installation)
 - [Implementations](#implementations)
-  - [GAN——Generative Adversarial Nets](#gan——generative-adversarial-nets)
+  - [GAN——Generative Adversarial Nets](#gangenerative-adversarial-nets)
 
 # Installation
 
