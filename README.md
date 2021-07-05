@@ -5,7 +5,6 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
 
 # Contents
 
-- [transferLearningAlgorithms](#transferlearningalgorithms)
 - [Contents](#contents)
 - [Installation](#installation)
 - [Implementations](#implementations)
