@@ -1,6 +1,5 @@
 <p align="center"><img src="images/logo.png" width="480"\></p>
 
-
 # transferLearningAlgorithms
 
 Work are welcome to visit my space, I'm Yiyang Li, at least in the next three years (2021-2024), I will be here to record what I studied in graduate student stage about transfer learning, such as literature introduction and code implementation, etc. I look forward to working with you scholars and experts in communication and begging your comments.
@@ -13,7 +12,9 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
 - [Contents](#contents)
 - [Installation](#installation)
 - [Implementations](#implementations)
-  - [GAN——Generative Adversarial Nets](#gangenerative-adversarial-nets)
+  - [GAN](#gan)
+  - [WGAN](#wgan)
+  - [WGAN-GP](#wgan-gp)
 
 # Installation
 
@@ -24,7 +25,11 @@ $ git clone https://github.com/CtrlZ1/transferLearningAlgorithms.git
 
 # Implementations
 
-## GAN——Generative Adversarial Nets
+## GAN
+
+**title**
+
+Generative Adversarial Nets
 
 **Times**
 
@@ -58,3 +63,67 @@ https://blog.csdn.net/qq_41076797/article/details/118483802
 **Paper address**
 
 https://arxiv.org/abs/1406.2661
+
+## WGAN
+
+**title**
+
+Wasserstein GAN
+
+**Times**
+
+2017
+
+**Authors**
+
+Martin Arjovsky, Soumith Chintala, Léon Bottou
+
+**Abstract**
+
+We introduce a new algorithm named WGAN, an alternative to traditional GAN training. In this new model, we show that we can improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches. Furthermore, we show that the corresponding optimization problem is sound, and provide extensive theoretical work highlighting the deep connections to other distances between distributions.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/116898649
+
+**Paper address**
+
+https://arxiv.org/abs/1701.07875
+
+## WGAN-GP
+
+**title**
+
+Improved Training of Wasserstein GANs
+
+**Times**
+
+2017
+
+**Authors**
+
+Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron 
+Courville
+
+**Abstract**
+
+Generative Adversarial Networks (GANs) are powerful generative models, but 
+suffer from training instability. The recently proposed Wasserstein GAN (WGAN) 
+makes progress toward stable training of GANs, but sometimes can still generate 
+only poor samples or fail to converge. We find that these problems are often due 
+to the use of weight clipping in WGAN to enforce a Lipschitz constraint on the 
+critic, which can lead to undesired behavior. We propose an alternative to 
+clipping weights: penalize the norm of gradient of the critic with respect to 
+its input. Our proposed method performs better than standard WGAN and enables 
+stable training of a wide variety of GAN architectures with almost no 
+hyperparameter tuning, including 101-layer ResNets and language models with 
+continuous generators. We also achieve high quality generations on CIFAR-10 and 
+LSUN bedrooms.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/118458028
+
+**Paper address**
+
+https://arxiv.org/abs/1704.00028
