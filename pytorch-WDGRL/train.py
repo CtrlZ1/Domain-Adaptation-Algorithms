@@ -58,6 +58,8 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
             clf_optim.zero_grad()
             classifer_and_wd_loss.backward()
             clf_optim.step()
+            #for par in model.feature_extractor.parameters():
+            #    print(par.grad)
 
         if batch_idx % args.logInterval == 0:
             print(

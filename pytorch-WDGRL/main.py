@@ -3,7 +3,7 @@ import torch
 import model
 import dataLoder
 from train import train
-from tes1t import tes1t, destAndReturnImg
+from tes1t import tes1t
 import matplotlib.pyplot as plt
 import os
 
@@ -82,11 +82,6 @@ if __name__ == '__main__':
 
         model = torch.load(list(os.walk(args.savePath))[0][0] + '/' + list(os.walk(args.savePath))[0][2][0])
 
-        # 进行一次测试保存出错的照片，然后return
-        # destAndReturnImg(model, targetTestLoader,DEVICE,args)
-
-        # import sys
-        # sys.exit()
 
 
     else:
@@ -94,10 +89,7 @@ if __name__ == '__main__':
 
         if args.datasetIndex==1 or args.datasetIndex==2:
             model=model.digistSMNetByWDGRL(args.numClass).to(DEVICE)
-        elif args.datasetIndex == 4 or args.datasetIndex == 6:
-            model=model.digistMUNetByDANN(args.numClass).to(DEVICE)
-        else:
-            model = model.modelNet(numClass=args.numClass, baseNet='ResNet50').to(DEVICE)
+
 
 
     # 用于测试

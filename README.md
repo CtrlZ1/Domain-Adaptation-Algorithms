@@ -1,5 +1,4 @@
 <p align="center"><img src="images/logo.png" width="480"\></p>
-
 # transferLearningAlgorithms
 
 Work are welcome to visit my space, I'm Yiyang Li, at least in the next three years (2021-2024), I will be here to record what I studied in graduate student stage about transfer learning, such as literature introduction and code implementation, etc. I look forward to working with you scholars and experts in communication and begging your comments.
@@ -15,6 +14,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [GAN](#gan)
   - [WGAN](#wgan)
   - [WGAN-GP](#wgan-gp)
+  - [LargeScaleOT](#LargeScaleOT)
 
 # Installation
 
@@ -127,3 +127,43 @@ https://blog.csdn.net/qq_41076797/article/details/118458028
 **Paper address**
 
 https://arxiv.org/abs/1704.00028
+
+
+
+## LargeScaleOT
+
+**title**
+
+Large scale optimal transport and mapping estimation
+
+**Times**
+
+2018
+
+**Authors**
+
+Vivien Seguy、Bharath Bhushan Damodaran、Rémi Flamary、Nicolas Courty、Antoine Rolet、Mathieu Blondel
+
+**Abstract**
+
+This paper presents a novel two-step approach for the fundamental problem of 
+learning an optimal map from one distribution to another. First, we learn an 
+optimal transport (OT) plan, which can be thought as a one-to-many map between 
+the two distributions. To that end, we propose a stochastic dual approach of 
+regularized OT, and show empirically that it scales better than a recent related 
+approach when the amount of samples is very large. Second, we estimate a Monge 
+map as a deep neural network learned by approximating the barycentric projection 
+of the previously-obtained OT plan. This parameterization allows generalization 
+of the mapping outside the support of the input measure. We prove two 
+theoretical stability results of regularized OT which show that our estimations 
+converge to the OT plan and Monge map between the underlying continuous 
+measures. We showcase our proposed approach on two applications: domain 
+adaptation and generative modeling.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/118878524
+
+**Paper address**
+
+https://arxiv.org/abs/1711.02283

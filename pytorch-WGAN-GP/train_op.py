@@ -79,7 +79,7 @@ def train_op(G,D,opt,train_dataLoader):
                 optimizer_G.zero_grad()
                 fake_img = G(z)
                 # Loss measures generator's ability to fool the discriminator
-                g_loss = -torch.mean(D(fake_img))
+                g_loss = torch.mean(D(real_imgs))-torch.mean(D(fake_img))
 
                 g_loss.backward()
                 optimizer_G.step()
