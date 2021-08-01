@@ -15,6 +15,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [WGAN](#wgan)
   - [WGAN-GP](#wgan-gp)
   - [LargeScaleOT](#LargeScaleOT)
+  - [JCPOT](#JCPOT)
 
 # Installation
 
@@ -167,3 +168,44 @@ https://blog.csdn.net/qq_41076797/article/details/118878524
 **Paper address**
 
 https://arxiv.org/abs/1711.02283
+
+## JCPOT
+
+**title**
+
+Optimal Transport for Multi-source Domain Adaptation under Target
+Shift
+
+**Times**
+
+2019
+
+**Authors**
+
+Ievgen Redko 、Nicolas Courty 、Rémi Flamary 、Devis Tuia
+
+**Abstract**
+
+In this paper, we tackle the problem of reducing discrepancies between multiple 
+domains, i.e. multi-source domain adaptation, and consider it under the target 
+shift assumption: in all domains we aim to solve a classification problem with 
+the same output classes, but with different labels proportions. This problem, 
+generally ignored in the vast majority of domain adaptation papers, is 
+nevertheless critical in real-world applications, and we theoretically show its 
+impact on the success of the adaptation. Our proposed method is based on optimal 
+transport, a theory that has been successfully used to tackle adaptation 
+problems in machine learning. The introduced approach, Joint Class Proportion 
+and Optimal Transport (JCPOT), performs multi-source adaptation and target shift 
+correction simultaneously by learning the class probabilities of the unlabeled 
+target sample and the coupling allowing to align two (or more) probability 
+distributions. Experiments on both synthetic and real-world data (satellite 
+image pixel classification) task show the superiority of the proposed method 
+over the state-of-the-art.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/117151400
+
+**Paper address**
+
+http://proceedings.mlr.press/v89/redko19a/redko19a.pdf
