@@ -16,6 +16,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [WGAN-GP](#wgan-gp)
   - [LargeScaleOT](#LargeScaleOT)
   - [JCPOT](#JCPOT)
+  - [JDOT](#JDOT)
 
 # Installation
 
@@ -209,3 +210,41 @@ https://blog.csdn.net/qq_41076797/article/details/117151400
 **Paper address**
 
 http://proceedings.mlr.press/v89/redko19a/redko19a.pdf
+
+## JDOT
+
+**title**
+
+Joint distribution optimal transportation for domain adaptation
+
+**Times**
+
+2017
+
+**Authors**
+
+Nicolas Courty 、Rémi Flamary 、Amaury Habrard 、Alain Rakotomamonjy
+
+**Abstract**
+
+This paper deals with the unsupervised domain adaptation problem, where one 
+wants to estimate a prediction function f in a given target domain without any 
+labeled sample by exploiting the knowledge available from a source domain where 
+labels are known. Our work makes the following assumption: there exists a 
+non-linear transformation between the joint feature/label space distributions of 
+the two domain Ps and Pt. We propose a solution of this problem with optimal 
+transport, that allows to recover an estimated target P^f_t= (X, f(X)) by 
+optimizing simultaneously the optimal coupling and f. We show that our method 
+corresponds to the minimization of a bound on the target error, and provide an 
+efficient algorithmic solution, for which convergence is proved. The versatility 
+of our approach, both in terms of class of hypothesis or loss functions is 
+demonstrated with real world classification and regression problems, for which 
+we reach or surpass state-of-the-art results.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/116608774
+
+**Paper address**
+
+https://proceedings.neurips.cc/paper/2017/file/0070d23b06b1486a538c0eaa45dd167a-Paper.pdf
