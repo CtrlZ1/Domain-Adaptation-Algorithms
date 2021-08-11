@@ -228,6 +228,7 @@ def jdot_nn_l2(model,X,Y,Xtest,ytest=[],fit_params={},reset_model=True, numIterB
     results['clf']=g
     results['fcost']=sav_fcost
     results['totalcost']=sav_totalcost
+    results['G']=G
     return g,results    
     
 

@@ -79,7 +79,7 @@ pl.figure(1,(10,5))
 
 
 i1=0
-i2=1;
+i2=1
 
 pl.subplot(1,2,1)
 pl.scatter(X[:,i1],X[:,i2],c=y)#,cmap='Pastel2')

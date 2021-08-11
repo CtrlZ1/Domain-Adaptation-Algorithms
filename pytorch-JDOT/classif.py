@@ -17,7 +17,9 @@ import scipy.optimize as spo
 from sklearn.model_selection import KFold
 from scipy.spatial.distance import cdist
 from sklearn.metrics.pairwise import rbf_kernel
-
+import torch
+import torch.nn as nn
+import torch.optim as optim
 import time
 __time_tic_toc=time.time()
 
@@ -220,3 +222,82 @@ class KRRClassifier(Classifier):
 
     def predict(self,K):
         return np.dot(K,self.w)+self.b
+
+
+class NNClassifier(nn.Module):
+
+    def __init__(self):
+        super(NNClassifier, self).__init__()
+        self.DEVICE = torch.device('cpu')
+        if torch.cuda.is_available():
+            self.DEVICE = torch.device('cuda:' + str(0))
+        self.classifier_demo = nn.Sequential(
+            nn.Linear(2, 100),
+            nn.ReLU(),
+            nn.Linear(100, 3),
+            nn.Softmax()
+        ).to(self.DEVICE)
+
+    def euclidean_dist(self,x, y, square=False):
+        """
+        Args:
+          x: pytorch Variable, with shape [m, d]
+          y: pytorch Variable, with shape [n, d]
+        Returns:
+          dist: pytorch Variable, with shape [m, n]
+        """
+        m = x.size(0)
+        n = y.size(0)
+
+        # 方式1
+        a1 = torch.sum((x ** 2), 1, keepdim=True).expand(m, n)
+        b2 = (y ** 2).sum(1).expand(m, n)
+        if square:
+            dist = (a1 + b2 - 2 * (x @ y.T)).float()
+        else:
+            dist = (a1 + b2 - 2 * (x @ y.T)).float().sqrt()
+        return dist
+    def train(self, data, y,epoch):
+        data=torch.tensor(data).float().to(self.DEVICE)
+        y=torch.tensor(y).float().to(self.DEVICE)
+        optimizer_C = optim.SGD(self.classifier_demo.parameters(), lr=0.002)
+        for e in range(epoch):
+            optimizer_C.zero_grad()
+            prey=self.classifier_demo(data)
+            loss=torch.sum(self.euclidean_dist(prey,y,square=True))
+            loss.backward()
+            optimizer_C.step()
+
+    # Label propagation
+    def Label_propagation(self, Xt, Ys, g):
+        ys = Ys
+        xt = Xt
+        yt = np.zeros((len(np.unique(ys)), xt.shape[0]))  # [n_labels,n_target_sample]
+        # let labels start from a number
+        ysTemp = np.copy(ys)  # ys、ysTemp:[n_source_samples,]
+        classes = np.unique(ysTemp)
+        n = len(classes)
+        ns = len(ysTemp)
+
+        # perform label propagation
+        transp = g / np.sum(g, 1)[:, None]  # coupling_[i]:[n_source_samples,n_target_samples]
+
+        # set nans to 0
+        transp[~ np.isfinite(transp)] = 0
+
+        D1 = np.zeros((n, ns))  # [n_labels,n_source_samples]
+
+        for c in classes:
+            D1[int(c), ysTemp == c] = 1
+
+        # compute propagated labels
+        # / len(ys)=/ k, means uniform sources transfering
+        yt = yt + np.dot(D1, transp) / len(
+            ys)  # np.dot(D1, transp):[n_labels,n_target_samples] show the mass of every class for transfering to target samples
+
+        return yt.T  # n_samples,n_labels
+
+
+    def predict(self, data):
+        data = torch.tensor(data).float().to(self.DEVICE)
+        return self.classifier_demo(data)

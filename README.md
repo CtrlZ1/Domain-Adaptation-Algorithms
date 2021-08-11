@@ -248,3 +248,46 @@ https://blog.csdn.net/qq_41076797/article/details/116608774
 **Paper address**
 
 https://proceedings.neurips.cc/paper/2017/file/0070d23b06b1486a538c0eaa45dd167a-Paper.pdf
+
+## DCWD
+
+**title**
+
+Domain-attention Conditional Wasserstein Distance
+for Multi-source Domain Adaptation
+
+**Times**
+
+2020
+
+**Authors**
+
+HANRUI WU 、YUGUANG YAN  、 MICHAEL K. NG 、QINGYAO WU
+
+**Abstract**
+
+Multi-source domain adaptation has received considerable attention due to its 
+effectiveness of leveraging the knowledge from multiple related sources with 
+different distributions to enhance the learning performance. One of the 
+fundamental challenges in multi-source domain adaptation is how to determine the 
+amount of knowledge transferred from each source domain to the target domain. To 
+address this issue, we propose a new algorithm, called Domain-attention 
+Conditional Wasserstein Distance (DCWD), to learn transferred weights for 
+evaluating the relatedness across the source and target domains. In DCWD, we 
+design a new conditional Wasserstein distance objective function by taking the 
+label information into consideration to measure the distance between a given 
+source domain and the target domain. We also develop an attention scheme to 
+compute the transferred weights of different source domains based on their 
+conditional Wasserstein distances to the target domain. After that, the 
+transferred weights can be used to reweight the source data to determine their 
+importance in knowledge transfer. We conduct comprehensive experiments on 
+several real-world data sets, and the results demonstrate the effectiveness and 
+efficiency of the proposed method.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/118358520
+
+**Paper address**
+
+https://dl.acm.org/doi/10.1145/3391229
