@@ -38,7 +38,7 @@ class WJDOTModel(nn.Module):
         xt_byClass = [[] for i in range(n_labels)]
         yt_pre = np.append(yt[:xt_index], yt_u_pre)
         for i in range(len(yt_pre)):
-            xt_byClass[int(yt[i])].append(xt[i])
+            xt_byClass[int(yt_pre[i])].append(xt[i])
 
         nk = []
         ek = []
@@ -61,7 +61,7 @@ class WJDOTModel(nn.Module):
                 if method == 'sinkhorn':
                     Gs = ot.sinkhorn(ws, wt, C1, reg)
                 else:
-                    Gs = ot.emd(ws[index], wt, C1)
+                    Gs = ot.emd(ws, wt, C1)
                 G.append(Gs)
                 loss = np.multiply(C1, Gs).mean()
                 nk_class+=loss
