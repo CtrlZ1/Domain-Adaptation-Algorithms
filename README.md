@@ -1,5 +1,5 @@
 <p align="center"><img src="images/logo.png" width="480"\></p>
-# transferLearningAlgorithms
+# TransferLearningAlgorithms
 
 Work are welcome to visit my space, I'm Yiyang Li, at least in the next three years (2021-2024), I will be here to record what I studied in graduate student stage about transfer learning, such as literature introduction and code implementation, etc. I look forward to working with you scholars and experts in communication and begging your comments.
 
@@ -7,7 +7,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
 
 # Contents
 
-- [transferLearningAlgorithms](#transferlearningalgorithms)
+- [TransferLearningAlgorithms](#Transferlearningalgorithms)
 - [Contents](#contents)
 - [Installation](#installation)
 - [Implementations](#implementations)
@@ -18,6 +18,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [JCPOT](#JCPOT)
   - [JDOT](#JDOT)
   - [DCWD](#DCWD)
+  - [WDGRL](#WDGRL)
 
 # Installation
 
@@ -292,3 +293,47 @@ https://blog.csdn.net/qq_41076797/article/details/118358520
 **Paper address**
 
 https://dl.acm.org/doi/10.1145/3391229
+
+## WDGRL
+
+**title**
+
+Wasserstein Distance Guided Representation Learning
+for Domain Adaptation
+
+**Times**
+
+2018
+
+**Authors**
+
+Jian Shen, Yanru Qu, Weinan Zhang∗, Y ong Yu
+
+**Abstract**
+
+Domain adaptation aims at generalizing a high-performance learner on a target 
+domain via utilizing the knowledge distilled from a source domain which has a 
+different but related data distribution. One solution to domain adaptation is to 
+learn domain invariant feature representations while the learned representations 
+should also be discriminative in prediction. To learn such representations, 
+domain adaptation frameworks usually include a domain invariant representation 
+learning approach to measure and reduce the domain discrepancy, as well as a 
+discriminator for classification. Inspired by Wasserstein GAN, in this paper we 
+propose a novel approach to learn domain invariant feature representations, 
+namely Wasserstein Distance Guided Representation Learning (WDGRL). WDGRL 
+utilizes a neural network, denoted by the domain critic, to estimate empirical 
+Wasserstein distance between the source and target samples and optimizes the 
+feature extractor network to minimize the estimated Wasserstein distance in an 
+adversarial manner. The theoretical advantages of Wasserstein distance for 
+domain adaptation lie in its gradient property and promising generalization 
+bound. Empirical studies on common sentiment and image classification adaptation 
+datasets demonstrate that our proposed WDGRL outperforms the state-of-the-art 
+domain invariant representation learning approaches.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/116942752
+
+**Paper address**
+
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17155
