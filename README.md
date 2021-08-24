@@ -374,3 +374,38 @@ https://blog.csdn.net/qq_41076797/article/details/119698726
 **Paper address**
 
 https://arxiv.org/abs/1412.3474
+
+## JAN
+
+**title**
+
+Deep Transfer Learning with Joint Adaptation Networks
+
+**Times**
+
+2017
+
+**Authors**
+
+Mingsheng Long  Han Zhu  Jianmin Wang  Michael I. Jordan
+
+**Abstract**
+
+Deep networks have been successfully applied to learn transferable features for 
+adapting models from a source domain to a different target domain. In this 
+paper, we present joint adaptation networks (JAN), which learn a transfer 
+network by aligning the joint distributions of multiple domain-specific layers 
+across domains based on a joint maximum mean discrepancy (JMMD) criterion. 
+Adversarial training strategy is adopted to maximize JMMD such that the 
+distributions of the source and target domains are made more distinguishable. 
+Learning can be performed by stochastic gradient descent with the gradients 
+computed by back-propagation in linear-time. Experiments testify that our model 
+yields state of the art results on standard datasets.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/119850543
+
+**Paper address**
+
+http://proceedings.mlr.press/v70/long17a.html
