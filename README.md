@@ -18,6 +18,7 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [JCPOT](#JCPOT)
   - [JDOT](#JDOT)
   - [DCWD](#DCWD)
+  - [DAN](#DAN)
   - [WDGRL](#WDGRL)
 
 # Installation
@@ -374,6 +375,47 @@ https://blog.csdn.net/qq_41076797/article/details/119698726
 **Paper address**
 
 https://arxiv.org/abs/1412.3474
+
+## DAN
+
+**title**
+
+Learning Transferable Features with Deep Adaptation Networks
+
+**Times**
+
+2015
+
+**Authors**
+
+Mingsheng Long  Yue Cao  Jianmin Wang  Michael I. Jordan
+
+**Abstract**
+
+Recent studies reveal that a deep neural network can learn transferable features 
+which generalize well to novel tasks for domain adaptation. However, as deep 
+features eventually transition from general to specific along the network, the 
+feature transferability drops significantly in higher layers with increasing 
+domain discrepancy. Hence, it is important to formally reduce the dataset bias 
+and enhance the transferability in task-specific layers. In this paper, we 
+propose a new Deep Adaptation Network (DAN) architecture, which generalizes deep 
+convolution alneural network to the domain adaptation scenario. In DAN, hidden 
+representations of all task-specific layers are embeddedin a reproducing kernel 
+Hilbert space where the mean embeddingsof different domain distributions can be 
+explicitly matched. The domain discrepancy is further reduced using an optimal 
+multi-kernel selection method for mean embedding matching. DAN can learn 
+transferable features with statistic alguarantees,and can scale linearly by 
+unbiased estimate of kernel embedding. Extensive empirical evidence shows that 
+the proposed architecture yields state-of-the-art image classification error 
+rates on standard domain adaptation benchmarks.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/119829512
+
+**Paper address**
+
+http://proceedings.mlr.press/v37/long15.html
 
 ## JAN
 
