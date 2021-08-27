@@ -1,5 +1,5 @@
 <p align="center"><img src="images/logo.png" width="480"\></p>
-# TransferLearningAlgorithms
+# Domain-Adaptation-Algorithms
 
 Work are welcome to visit my space, I'm Yiyang Li, at least in the next three years (2021-2024), I will be here to record what I studied in graduate student stage about transfer learning, such as literature introduction and code implementation, etc. I look forward to working with you scholars and experts in communication and begging your comments.
 
@@ -20,6 +20,8 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [DCWD](#DCWD)
   - [DAN](#DAN)
   - [WDGRL](#WDGRL)
+  - [DDC](#DDC)
+  - [JAN](#JAN)
 
 # Installation
 
@@ -339,7 +341,7 @@ https://blog.csdn.net/qq_41076797/article/details/116942752
 
 https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17155
 
-## WDGRL
+## DDC
 
 **title**
 
