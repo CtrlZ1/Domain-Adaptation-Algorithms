@@ -128,7 +128,7 @@ class DeepJDOT(nn.Module):
         leniter = int(len(allsourceData) / args.batchSize)
         for e in range(args.epoch):
             # print("epoch:",e)
-
+            label_propagation_correct = 0
             for batch_idx in tqdm.tqdm(range(leniter),total=leniter,desc='Train epoch = {}'.format(e), ncols=80,
                                                                   leave=False):
                 # all
@@ -219,7 +219,7 @@ class DeepJDOT(nn.Module):
                 print("label propagation acc...")
                 # print(float(label_propagation_correct),len(targetDataLoader.dataset))
                 print(float(label_propagation_correct) / (leniter * args.batchSize))
-                label_propagation_correct = 0
+
 
         print("training acc...")
         self.tes1t(source_loader, feature_model, classifier_model, args.n_dim, self.device)
