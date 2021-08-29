@@ -44,11 +44,11 @@ datasetRootAndImageSize=[
     #ImageCLEF 2014 3
     [r'E:\transferlearning\data\ImageCLEF 2014\b',r'E:\transferlearning\data\ImageCLEF 2014\c'],
     # usps-mnist 4
-    [r'E:\transferlearning\data\usps',r'E:\transferlearning\data\MNIST',16],
+    [r'E:\transferlearning\data\usps',r'E:\transferlearning\data\MNIST',28],
     # office_caltech_10 a-w 5
     [r"E:\transferlearning\data\office_caltech_10\amazon",r"E:\transferlearning\data\office_caltech_10\webcam",224],
     # mnist-usps 6
-    [r'E:\transferlearning\data\MNIST', r'E:\transferlearning\data\usps',16],
+    [r'E:\transferlearning\data\MNIST', r'E:\transferlearning\data\usps',28],
     # SVHN、USPS->MNIST 7
     [[r'E:\transferlearning\data\SVHN',r'E:\transferlearning\data\usps'], r'E:\transferlearning\data\MNIST',28],
 
