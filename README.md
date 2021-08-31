@@ -23,6 +23,8 @@ Work are welcome to visit my space, I'm Yiyang Li, at least in the next three ye
   - [WDGRL](#WDGRL)
   - [DDC](#DDC)
   - [JAN](#JAN)
+  - [MCD](#MCD)
+  - [SWD](#SWD)
 
 # Installation
 
@@ -492,3 +494,79 @@ https://blog.csdn.net/qq_41076797/article/details/119850543
 **Paper address**
 
 http://proceedings.mlr.press/v70/long17a.html
+
+## MCD
+
+**title**
+
+Maximum Classifier Discrepancy for Unsupervised Domain Adaptation
+
+**Times**
+
+2018
+
+**Authors**
+
+Kuniaki Saito, Kohei Watanabe, Yoshitaka Ushiku, and Tatsuya Harada
+
+**Abstract**
+
+In this work, we present a method for unsupervised domain adaptation. Many 
+adversarial learning methods train domain classifier networks to distinguish the 
+features as either a source or target and train a feature generator network to 
+mimic the discriminator. Two problems exist with these methods. First, the 
+domain classifier only tries to distinguish the features as a source or target 
+and thus does not consider task-specific decision boundaries between classes. 
+Therefore, a trained generator can generate ambiguous features near class 
+boundaries. Second, these methods aim to completely match the feature 
+distributions between different domains, which is difficult because of each 
+domain’s characteristics. To solve these problems, we introduce a new approach 
+that attempts to align distributions of source and target by utilizing the 
+task-specific decision boundaries. We propose to maximize the discrepancy 
+between two classifiers’ outputs to detect target samples that are far from the 
+support of the source. A feature generator learns to generate target features 
+near the support to minimize the discrepancy. Our method outperforms other 
+methods on several datasets of image classification and semantic segmentation.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/119991815
+
+**Paper address**
+
+https://openaccess.thecvf.com/content_cvpr_2018/html/Saito_Maximum_Classifier_Discrepancy_CVPR_2018_paper.html
+
+## SWD
+
+**title**
+
+Sliced Wasserstein Discrepancy for Unsupervised Domain Adaptation
+
+**Times**
+
+2019
+
+**Authors**
+
+Chen-Yu Lee, Tanmay Batra, Mohammad Haris Baig, Daniel Ulbricht
+
+**Abstract**
+
+In this work, we connect two distinct concepts for unsupervised domain 
+adaptation: feature distribution alignment between domains by utilizing the 
+task-specificdecision boundary [57] and the Wasserstein metric [72]. Our 
+proposed sliced Wasserstein discrepancy (SWD) is designed to capture the natural 
+notion of dissimilarity between the outputs of task-specific classifiers. It 
+provides a geometrically meaningful guidance to detect target samples that are 
+far from the support of the source and enables efficient distribution alignment 
+in an end-to-end trainable fashion. In the experiments, we validate the 
+effectiveness and genericness of our method on digit and sign recognition, image 
+classification, semantic segmentation, and object detection.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/119979243
+
+**Paper address**
+
+https://openaccess.thecvf.com/content_CVPR_2019/html/Lee_Sliced_Wasserstein_Discrepancy_for_Unsupervised_Domain_Adaptation_CVPR_2019_paper.html
