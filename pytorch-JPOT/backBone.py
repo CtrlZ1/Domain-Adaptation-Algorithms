@@ -1,21 +1,54 @@
 import torch.nn as nn
 from torchvision import models
+import torch
+class LeNet(nn.Module):
+    def __init__(self,n_dim):
+        super(LeNet,self).__init__()
+        layer1 = nn.Sequential()
+        if n_dim==1:
+            layer1.add_module('conv1',nn.Conv2d(1,6,5))
+
+        elif n_dim>1:
+            layer1.add_module('conv1', nn.Conv2d(3, 6, 5))
+        layer1.add_module('pool1',nn.MaxPool2d(2,2))
+        self.layer1 = layer1
+
+        layer2 = nn.Sequential()
+        layer2.add_module('conv2',nn.Conv2d(6,16,5))
+        layer2.add_module('pool2',nn.MaxPool2d(2,2))
+        self.layer2 = layer2
+
+        layer3 = nn.Sequential()
+        layer3.add_module('fc1',nn.Linear(256,120))# aim to MNIST->usps，Specific tasks, specific settings
+        layer3.add_module('fc2',nn.Linear(120,84))
+        layer3.add_module('fc3',nn.Linear(84,10))
+        self.layer3 = layer3
+
+    def forward(self, x):
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = x.view(x.size(0),-1)#转换（降低）数据维度，进入全连接层
+        x = self.layer3(x)
+        return x
 
 class AlexNetFc(nn.Module):
     def __init__(self):
         super(AlexNetFc,self).__init__()
         # 下载预训练的模型
-        modelAlexNet=models.alexnet(pretrained=True)
+        self.modelAlexNet=models.alexnet(pretrained=True)
         # 获取卷积层提取的特征数据
-        self.features=modelAlexNet.features
+        self.features=self.modelAlexNet.features
+        self.classifier=self.modelAlexNet.classifier
+        self.avgpool = self.modelAlexNet.avgpool
         # self.classifier=nn.Sequential()
         # # 将模型的全连接层加入到分类器中
         # for i in range(6):
         #     self.classifier.add_module("classifier"+str(i),modelAlexNet.classifier[i])
     def forward(self,x):
         x=self.features(x)
-        x=x.view(x.size(0),-1)
-        #x=self.classifier(x)
+        x = self.avgpool(x)
+        x = torch.flatten(x, 1)
+        x=self.classifier(x)
         return x
 
 class ResNet18Fc(nn.Module):
@@ -154,7 +187,9 @@ class ResNet152Fc(nn.Module):
         return x
 
 
-network_dict = {"AlexNet": AlexNetFc,
+network_dict = {
+                "LeNet":LeNet,
+                "AlexNet": AlexNetFc,
                 "ResNet18": ResNet18Fc,
                 "ResNet34": ResNet34Fc,
                 "ResNet50": ResNet50Fc,

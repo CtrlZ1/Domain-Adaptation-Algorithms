@@ -1,5 +1,4 @@
 <p align="center"><img src="images/logo.png" width="480"\></p>
-
 # Domain-Adaptation-Algorithms
 
 Welcome to visit my work space, I'm Yiyang Li, at least in the next three years (2021-2024), I will be here to record what I studied in graduate student stage about Domain Adaptation, such as literature introduction and code implementation, etc. I look forward to working with you scholars and experts in communication and begging your comments.
@@ -24,6 +23,8 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [JAN](#JAN)
   - [MCD](#MCD)
   - [SWD](#SWD)
+  - [JPOT](#JPOT)
+  - [NW](#NW)
 
 # Installation
 
@@ -569,3 +570,92 @@ https://blog.csdn.net/qq_41076797/article/details/119979243
 **Paper address**
 
 https://openaccess.thecvf.com/content_CVPR_2019/html/Lee_Sliced_Wasserstein_Discrepancy_for_Unsupervised_Domain_Adaptation_CVPR_2019_paper.html
+
+## JPOT
+
+**title**
+
+Joint Partial Optimal Transport for Open Set Domain Adaptation
+
+**Times**
+
+2020
+
+**Authors**
+
+Renjun Xu, Pelen Liu, Yin Zhang, Fang Cai, Jindong Wang, Shuoying Liang, Heting
+
+**Abstract**
+
+Domain adaptation (DA) has achieved a resounding success to learn a good 
+classifier by leveraging labeled data from a source domain to adapt to an 
+unlabeled target domain. However, in a general setting when the target domain 
+contains classes that are never observed in the source domain, namely in Open 
+Set Domain Adaptation (OSDA), existing DA methods failed to work because of the 
+interference of the extra unknown classes. This is a much more challenging 
+problem, since it can easily result in negative transfer due to the mismatch 
+between the unknown and known classes. Existing researches are susceptible to 
+misclassification when target domain unknown samples in the feature space 
+distributed near the decision boundary learned from the labeled source domain. 
+To overcome this, we propose Joint Partial Optimal Transport (JPOT), fully 
+utilizing information of not only the labeled source domain but also the 
+discriminative representation of unknown class in the target domain. The 
+proposed joint discriminative prototypical compactness loss can not only achieve 
+intra-class compactness and inter-class separability, but also estimate the mean 
+and variance of the unknown class through backpropagation, which remains 
+intractable for previous methods due to the blindness about the structure of the 
+unknown classes. To our best knowledge, this is the first optimal transport 
+model for OSDA. Extensive experiments demonstrate that our proposed model can 
+significantly boost the performance of open set domain adaptation on standard DA 
+datasets.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120133702
+
+**Paper address**
+
+https://www.ijcai.org/proceedings/2020/352
+
+## NW
+
+**title**
+
+Normalized Wasserstein for Mixture Distributions with Applications in 
+Adversarial Learning and Domain Adaptation
+
+**Times**
+
+2019
+
+**Authors**
+
+Yogesh Balaji, Rama Chellappa, Soheil Feizi
+
+**Abstract**
+
+Understanding proper distance measures between distributions is at the core of 
+several learning tasks such as generative models, domain adaptation, clustering, 
+etc. In this work, we focus on mixture distributions that arise naturally in 
+several application domains where the data contains different sub-populations. F 
+or mixture distributions, established distance measures such as the Wasserstein 
+distance do not take into account imbalanced mixture proportions. Thus, even if 
+two mixture distributions have identical mixture components but different 
+mixture proportions, the Wasserstein distance between them will be large. This 
+often leads to undesired results in distance-based learning methods for mixture 
+distributions. In this paper , we resolve this issue by introducing the 
+Normalized Wasserstein measure. The key idea is to introduce mixture proportions 
+as optimization variables, effectively normalizing mixture proportions in the 
+Wasserstein formulation. Using the proposed normalized Wasserstein measure leads 
+to significant performance gains for mixture distributions with imbalanced 
+mixture proportions compared to the vanilla Wasserstein distance. We demonstrate 
+the effectiveness of the proposed measure in GANs, domain adaptation and 
+adversarial clustering in several benchmark datasets.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120086168
+
+**Paper address**
+
+https://arxiv.org/abs/1902.00415
