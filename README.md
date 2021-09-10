@@ -703,3 +703,45 @@ https://blog.csdn.net/qq_41076797/article/details/120054974
 **Paper address**
 
 https://arxiv.org/abs/1705.00609
+
+## MCDA
+
+**title**
+
+Deep multi-Wasserstein unsupervised domain adaptation
+
+**Times**
+
+2019
+
+**Authors**
+
+Tien-Nam Le , Amaury Habrard , Marc Sebban
+
+**Abstract**
+
+In unsupervised domain adaptation (DA), 1 aims at learning from labeled source 
+data and fully unlabeled target examples a model with a low error on the target 
+domain. In this setting, standard generalization bounds prompt us to minimize 
+the sum of three terms: (a) the source true risk, (b) the divergence be- tween 
+the source and target domains, and (c) the combined error of the ideal joint 
+hypothesis over the two domains. Many DA methods – e s p e c i a l l y those 
+using deep neural networks – h a v e focused on the first two terms by using 
+different divergence measures to align the source and target distributions on a 
+shared latent feature space, while ignoring the third term, assuming it is 
+negligible to perform the adaptation. However, it has been shown that purely 
+aligning the two distributions while minimizing the source error may lead to 
+so-called negative transfer . In this paper, we address this issue with a new 
+deep unsupervised DA method – called MCDA – minimizing the first two terms while 
+controlling the third one. MCDA benefits from highly-confident target samples 
+(using softmax predictions) to minimize class- wise Wasserstein distances and 
+efficiently approximate the ideal joint hypothesis. Empirical results show that 
+our approach outperforms state of the art methods.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120110987
+
+**Paper address**
+
+https://linkinghub.elsevier.com/retrieve/pii/S0167865519301400
