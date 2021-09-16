@@ -1,6 +1,7 @@
 <p align="center"><img src="images/logo.png" width="480"\></p>
 
 
+
 # Domain-Adaptation-Algorithms
 
 Welcome to visit my work space, I'm Yiyang Li, at least in the next three years (2021-2024), I will be here to record what I studied in graduate student stage about Domain Adaptation, such as literature introduction and code implementation, etc. I look forward to working with you scholars and experts in communication and begging your comments. 
@@ -30,6 +31,7 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [JPOT](#JPOT)
   - [NW](#NW)
   - [WDAN](#WDAN)
+  - [ADDA](#ADDA)
 
 # Installation
 
@@ -749,3 +751,48 @@ https://blog.csdn.net/qq_41076797/article/details/120110987
 **Paper address**
 
 https://linkinghub.elsevier.com/retrieve/pii/S0167865519301400
+
+## ADDA
+
+**title**
+
+Adversarial Discriminative Domain Adaptation
+
+**Times**
+
+2017
+
+**Authors**
+
+Eric Tzeng , Judy Hoffman , Kate Saenko , Trevor Darrell
+
+**Abstract**
+
+Adversarial learning methods are a promising approach to training robust deep 
+networks, and can generate complex samples across diverse domains. They can also 
+improve recognition despite the presence of domain shift or dataset bias: recent 
+adversarial approaches to unsupervised domain adaptation reduce the difference 
+between the training and test domain distributions and thus improve 
+generalization performance. However , while generative adversarial networks 
+(GANs) show compelling visualizations, they are not optimal on discriminative 
+tasks and can be limited to smaller shifts. On the other hand, discriminative 
+approaches can handle larger domain shifts, but impose tied weights on the model 
+and do not exploit a GAN-based loss. In this work, we first outline a novel 
+generalized framework for adversarial adaptation, which subsumes recent 
+state-of-the-art approaches as special cases, and use this generalized view to 
+better relate prior approaches. We then propose a previously unexplored instance 
+of our general framework which combines discriminative modeling, untied weight 
+sharing, and a GAN loss, which we call Adversarial Discriminative Domain 
+Adaptation (ADDA). We show that ADDA is more effective yet considerably simpler 
+than competing domainadversarial methods, and demonstrate the promise of our 
+approach by exceeding state-of-the-art unsupervised adaptation results on 
+standard domain adaptation tasks as well as a difficult cross-modality object 
+classification task.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120273707
+
+**Paper address**
+
+https://openreview.net/forum?id=B1Vjl1Stl
