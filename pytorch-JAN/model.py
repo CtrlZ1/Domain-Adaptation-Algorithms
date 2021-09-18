@@ -62,14 +62,14 @@ def train_process(model,sourceDataLoader, targetDataLoader,taragetTestDataLoader
     ]
     if thetas is not None:
         parameters += [{"params": theta.parameters(), 'lr': 0.1} for theta in thetas]
-
+	optimizer = optim.SGD(parameters, args.lr, momentum=args.momentum, weight_decay=args.l2_Decay, nesterov=True)
+    # learningRate = args.lr / math.pow((1 + 10 * (epoch - 1) / args.epoch), 0.75)
+    learningRate = LambdaLR(optimizer, lambda x: (1. + args.lr_gamma * (float(x)/(args.epoch))) ** (-args.lr_decay))
+	clf_criterion = nn.CrossEntropyLoss()
     for epoch in range(1, args.epoch + 1):
         model.train()
-        optimizer = optim.SGD(parameters, args.lr/ 10, momentum=args.momentum, weight_decay=args.l2_Decay, nesterov=True)
-
-        # learningRate = args.lr / math.pow((1 + 10 * (epoch - 1) / args.epoch), 0.75)
-        learningRate = LambdaLR(optimizer, lambda x: args.lr * (1. + args.lr_gamma * float(x)) ** (-args.lr_decay))
-        clf_criterion = nn.CrossEntropyLoss()
+        
+        
         lenSourceDataLoader = len(sourceDataLoader)
 
         correct = 0

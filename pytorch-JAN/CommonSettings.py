@@ -3,9 +3,9 @@ import argparse
 
 # parameter setting
 parser=argparse.ArgumentParser()
-parser.add_argument('--batchSize',type=int,default=8,metavar='batchSize',help='input the batch size of training process.(default=64)')
+parser.add_argument('--batchSize',type=int,default=32,metavar='batchSize',help='input the batch size of training process.(default=64)')
 parser.add_argument('--epoch',type=int, default=50,metavar='epoch',help='the number of epochs for training.(default=100)')
-parser.add_argument('--lr',type=float,default=1e-3,metavar='LR',help='the learning rate for training.(default=1e-2)')
+parser.add_argument('--lr',type=float,default=3e-3,metavar='LR',help='the learning rate for training.(default=1e-2)')
 parser.add_argument('--n_source_simples',type=int,default=50,help='the number of each source_simples')
 parser.add_argument('--n_target_simples',type=int,default=200,help='the number of each target_simples')
 parser.add_argument('--length_of_feature',type=int,default=2352,help='the length of feature')
