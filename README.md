@@ -32,6 +32,7 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [NW](#NW)
   - [WDAN](#WDAN)
   - [ADDA](#ADDA)
+  - [CoGAN](#CoGAN)
 
 # Installation
 
@@ -796,3 +797,41 @@ https://blog.csdn.net/qq_41076797/article/details/120273707
 **Paper address**
 
 https://openreview.net/forum?id=B1Vjl1Stl
+
+## CoGAN
+
+**title**
+
+Coupled generative adversarial networks
+
+**Times**
+
+2016
+
+**Authors**
+
+Ming-Yu Liu , Oncel Tuzel
+
+**Abstract**
+
+We propose coupled generative adversarial network (CoGAN) for learning a joint 
+distribution of multi-domain images. In contrast to the existing approaches, 
+which require tuples of corresponding images in different domains in the 
+training set, CoGAN can learn a joint distribution without any tuple of 
+corresponding images. It can learn a joint distribution with just samples drawn 
+from the marginal distributions. This is achieved by enforcing a weight-sharing 
+constraint that limits the network capacity and favors a joint distribution 
+solution over a product of marginal distributions one. We apply CoGAN to several 
+joint distribution learning tasks, including learning a joint distribution of 
+color and depth images, and learning a joint distribution of face images with 
+different attributes. For each task it successfully learns the joint 
+distribution without any tuple of corresponding images. We also demonstrate its 
+applications to domain adaptation and image transformation.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120347149
+
+**Paper address**
+
+https://proceedings.neurips.cc/paper/2016/hash/502e4a16930e414107ee22b6198c578f-Abstract.html
