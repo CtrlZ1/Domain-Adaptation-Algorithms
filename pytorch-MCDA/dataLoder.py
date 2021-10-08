@@ -93,7 +93,6 @@ def loadTrainData(path,batch_size,datasetIndex,imageSize,kwargs):
     elif datasetIndex==4:
         transform = transforms.Compose([
             transforms.Resize(imageSize),
-            transforms.Grayscale(),
             transforms.ToTensor(),
             transforms.Normalize(mean=(0.5,), std=(0.5,))
         ])
