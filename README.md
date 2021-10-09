@@ -33,6 +33,7 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [WDAN](#WDAN)
   - [ADDA](#ADDA)
   - [CoGAN](#CoGAN)
+  - [CDAN](#CDAN)
 
 # Installation
 
@@ -835,3 +836,42 @@ https://blog.csdn.net/qq_41076797/article/details/120347149
 **Paper address**
 
 https://proceedings.neurips.cc/paper/2016/hash/502e4a16930e414107ee22b6198c578f-Abstract.html
+
+## CDAN
+
+**title**
+
+Conditional Adversarial Domain Adaptation
+
+**Times**
+
+2018
+
+**Authors**
+
+Mingsheng Long, Zhangjie Cao, Jianmin Wang, and Michael I. Jordan
+
+**Abstract**
+
+Adversarial learning has been embedded into deep networks to learn disentangled 
+and transferable representations for domain adaptation. Existing adversarial 
+domain adaptation methods may not effectively align different domains of 
+multimodal distributions native in classification problems. In this paper, we 
+present conditional adversarial domain adaptation, a principled framework that 
+conditions the adversarial adaptation models on discriminative information 
+conveyed in the classifier predictions. Conditional domain adversarial networks 
+(CDANs) are designed with two novel conditioning strategies: multilinear 
+conditioning that captures the crosscovariance between feature representations 
+and classifier predictions to improve the discriminability, and entropy 
+conditioning that controls the uncertainty of classifier predictions to 
+guarantee the transferability. With theoretical guarantees and a few lines of 
+codes, the approach has exceeded state-of-the-art results on five datasets.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120622652
+
+**Paper address**
+
+https://proceedings.neurips.cc/paper/2018/hash/ab88b15733f543179858600245108dd8-Abstract.html
+
