@@ -73,12 +73,13 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
 
         for _ in range(args.n_clf):
             clf_trust_target_loss=torch.zeros(1).to(DEVICE)
-            num=0
-            for i in targeteLabel_pre:
-                if i.data.max()>args.theta:
-                    num+=1
-                    label=i.view(1,-1).data.max(1)[1]
-                    clf_trust_target_loss+=clf_criterion(i.view(1,-1),label)
+			# I think trust target datas will bring errors to model,so i stop compute clf_trust_target_loss as following.
+            # num=0
+            # for i in targeteLabel_pre:
+            #   if i.data.max()>args.theta:
+            #       num+=1
+            #       label=i.view(1,-1).data.max(1)[1]
+            #       clf_trust_target_loss+=clf_criterion(i.view(1,-1),label)
             clf_loss = clf_criterion(sourceLabel_pre, sourceLabel)
             wd_loss=torch.zeros(1).to(DEVICE)
             for i in range(args.n_labels+1):
@@ -90,8 +91,9 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
                                 yt_weight[:,i] * critics[i](targetFeature)).mean())
 
             # classifer_and_wd_loss = (clf_loss+clf_trust_target_loss/num)/2 + args.n_clf * wd_loss
-            classifer_and_wd_loss = (clf_loss*(len(sourceLabel)/(num+len(sourceLabel)))+(clf_trust_target_loss/num)*(num/(num+len(sourceLabel)))) + args.n_clf * wd_loss
-            clf_optim.zero_grad()
+            # classifer_and_wd_loss = (clf_loss*(len(sourceLabel)/(num+len(sourceLabel)))+(clf_trust_target_loss/num)*(num/(num+len(sourceLabel)))) + args.n_clf * wd_loss
+            classifer_and_wd_loss = clf_loss+args.n_clf * wd_loss
+			clf_optim.zero_grad()
             classifer_and_wd_loss.backward()
             clf_optim.step()
             #for par in model.feature_extractor.parameters():
