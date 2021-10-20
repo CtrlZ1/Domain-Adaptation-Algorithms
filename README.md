@@ -34,6 +34,7 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [ADDA](#ADDA)
   - [CoGAN](#CoGAN)
   - [CDAN](#CDAN)
+  - [M3SDA](#M3SDA)
 
 # Installation
 
@@ -874,4 +875,46 @@ https://blog.csdn.net/qq_41076797/article/details/120622652
 **Paper address**
 
 https://proceedings.neurips.cc/paper/2018/hash/ab88b15733f543179858600245108dd8-Abstract.html
+
+## M3SDA
+
+**title**
+
+Moment Matching for Multi-Source Domain Adaptation
+
+**Times**
+
+2019
+
+**Authors**
+
+Xingchao Peng, Qinxun Bai, Xide Xia, Zijun Huang, Kate Saenko, Bo Wang
+
+**Abstract**
+
+Conventional unsupervised domain adaptation (UDA) assumes that training data are 
+sampled from a single domain. This neglects the more practical scenario where 
+training data are collected from multiple sources, requiring multi-source domain 
+adaptation. We make three major contributions towards addressing this problem. 
+First, we collect and annotate by far the largest UDA dataset, called DomainNet, 
+which contains six domains and about 0.6 million images distributed among 345 
+categories, addressing the gap in data availability for multi-source UDA 
+research. Second, we propose a new deep learning approach, Moment Matching for 
+Multi-Source Domain Adaptation (M3SDA), which aims to transfer knowledge learned 
+from multiple labeled source domains to an unlabeled target domain by 
+dynamically aligning moments of their feature distributions. Third, we provide 
+new theoretical insights specifically for moment matching approaches in both 
+single and multiple source domain adaptation. Extensive experiments are 
+conducted to demonstrate the power of our new dataset in benchmarking 
+state-of-the-art multi-source domain adaptation methods, as well as the 
+advantage of our proposed model. Dataset and Code are available at 
+http://ai.bu.edu/M3SDA/
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120819629
+
+**Paper address**
+
+https://arxiv.org/abs/1812.01754
 
