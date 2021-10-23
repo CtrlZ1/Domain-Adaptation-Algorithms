@@ -38,6 +38,8 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
 
         outPut = model(sourceData, targetData, True)
         sourceFeature, targetFeature, sourceLabel_pre, targeteLabel_pre=outPut[0],outPut[1],outPut[2],outPut[3]
+		targeteLabel_soft = nn.Softmax(dim=1)(targeteLabel_pre)
+
         # h_s.requires_grad_(False)
         # h_t.requires_grad_(False)
 
@@ -50,7 +52,7 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
         T[args.n_labels]=1
         sourceLabel_onehot=onehot_label(sourceLabel,args.n_labels).to(DEVICE)
         ys_weight=torch.cat([sourceLabel_onehot,ones],dim=1).to(DEVICE)
-        yt_weight=torch.cat([targeteLabel_pre,ones],dim=1).to(DEVICE)
+        yt_weight=torch.cat([targeteLabel_soft,ones],dim=1).to(DEVICE)
         ys_weight = ys_weight / (torch.mean(ys_weight, dim=0) + 1e-6)
         yt_weight = yt_weight / (torch.mean(yt_weight, dim=0) + 1e-6)
         gradient_weights = ys_weight * yt_weight * T
@@ -73,14 +75,14 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
 
         for _ in range(args.n_clf):
             clf_trust_target_loss=torch.zeros(1).to(DEVICE)
-			# I think trust target datas will bring errors to model,so i stop compute clf_trust_target_loss as following.
-            # num=0
-            # for i in targeteLabel_pre:
-            #   if i.data.max()>args.theta:
-            #       num+=1
-            #       label=i.view(1,-1).data.max(1)[1]
-            #       clf_trust_target_loss+=clf_criterion(i.view(1,-1),label)
+            num=0
+            for i in targeteLabel_pre:
+                if i.data.max()>args.theta:
+                    num+=1
+                    label=i.view(1,-1).data.max(1)[1]
+                    clf_trust_target_loss+=clf_criterion(i.view(1,-1),label)
             clf_loss = clf_criterion(sourceLabel_pre, sourceLabel)
+			
             wd_loss=torch.zeros(1).to(DEVICE)
             for i in range(args.n_labels+1):
                 if i != args.n_labels:
@@ -90,9 +92,10 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
                 wd_loss += alpha * ((ys_weight[:,i] * critics[i](sourceFeature)).mean() - (
                                 yt_weight[:,i] * critics[i](targetFeature)).mean())
 
-            # classifer_and_wd_loss = (clf_loss+clf_trust_target_loss/num)/2 + args.n_clf * wd_loss
-            # classifer_and_wd_loss = (clf_loss*(len(sourceLabel)/(num+len(sourceLabel)))+(clf_trust_target_loss/num)*(num/(num+len(sourceLabel)))) + args.n_clf * wd_loss
-            classifer_and_wd_loss = clf_loss+args.n_clf * wd_loss
+   
+            classifer_and_wd_loss = (clf_loss*(len(sourceLabel)/(num+len(sourceLabel)))+
+					(clf_trust_target_loss/num)*(num/(num+len(sourceLabel)))) + args.n_clf * wd_loss
+            
 			clf_optim.zero_grad()
             classifer_and_wd_loss.backward()
             clf_optim.step()
@@ -101,8 +104,8 @@ def train(epoch, model, sourceDataLoader, targetDataLoader,DEVICE,args):
 
         if batch_idx % args.logInterval == 0:
             print(
-                '\ncritic_loss: {:.4f},  classifer_loss: {:.4f},  wd_Loss: {:.6f}'.format(
-                    Critic_loss.item(), clf_loss.item(), wd_loss.item()))
+                    '\ncritic_loss: {:.4f},  classifer_loss: {:.4f},  clf_trust_target_loss:{:.6f}, wd_Loss: {:.6f}'.format(
+                        Critic_loss.item(), clf_loss.item(), clf_trust_target_loss.item(),wd_loss.item()))
         # if batch_idx>0 and batch_idx% 200==0:
         #     DEVICE = torch.device('cuda')
         #     t_correct = tes1t(model, targetDataLoader, DEVICE)
