@@ -35,6 +35,7 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [CoGAN](#CoGAN)
   - [CDAN](#CDAN)
   - [M3SDA](#M3SDA)
+  - [CMSS](#CMSS)
 
 # Installation
 
@@ -918,3 +919,28 @@ https://blog.csdn.net/qq_41076797/article/details/120819629
 
 https://arxiv.org/abs/1812.01754
 
+## CMSS
+
+**title**
+
+Curriculum manager for source selection in multi- source domain adaptation
+
+**Times**
+
+2020
+
+**Authors**
+
+Luyu Yang, Yogesh Balaji, Ser-Nam Lim, Abhinav Shrivastava
+
+**Abstract**
+
+The performance of Multi-Source Unsupervised Domain Adaptation depends significantly on the effectiveness of transfer from labeled source domain samples. In this paper, we proposed an adversarial agent that learns a dynamic curriculum for source samples, called Curriculum Manager for Source Selection (CMSS). The Curriculum Manager, an independent network module, constantly updates the curriculum during training, and iteratively learns which domains or samples are best suited for aligning to the target. The intuition behind this is to force the Curriculum Manager to constantly re-measure the transferability of latent domains over time to adversarially raise the error rate of the domain discriminator. CMSS does not require any knowledge of the domain labels, yet it outperforms other methods on four well-known benchmarks by significant margins. We also provide interpretable results that shed light on the proposed method.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120877511
+
+**Paper address**
+
+https://arxiv.org/abs/2007.01261
