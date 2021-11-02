@@ -36,6 +36,7 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
   - [CDAN](#CDAN)
   - [M3SDA](#M3SDA)
   - [CMSS](#CMSS)
+  - [LtC-MSDA](#LtC-MSDA)
 
 # Installation
 
@@ -944,3 +945,29 @@ https://blog.csdn.net/qq_41076797/article/details/120877511
 **Paper address**
 
 https://arxiv.org/abs/2007.01261
+
+## LtC-MSDA
+
+**title**
+
+Learning to Combine: Knowledge Aggregation for Multi-Source Domain Adaptation
+
+**Times**
+
+2020
+
+**Authors**
+
+Hang Wang , Minghao Xu , Bingbing Ni , and Wenjun Zhang
+
+**Abstract**
+
+Transferring knowledges learned from multiple source domains to target domain is a more practical and challenging task than conventional single-source domain adaptation. Furthermore, the increase of modalities brings more difficulty in aligning feature distributions among multiple domains. To mitigate these problems, we propose a Learning to Combine for Multi-Source Domain Adaptation (LtC-MSDA) framework via exploring interactions among domains. In the nutshell, a knowledge graph is constructed on the prototypes of various domains to realize the information propagation among semantically adjacent representations. On such basis, a graph model is learned to predict query samples under the guidance of correlated prototypes. In addition, we design a Relation Alignment Loss (RAL) to facilitate the consistency of categories’ relational interdependency and the compactness of features, which boosts features’ intra-class invariance and inter-class separability. Comprehensive results on public benchmark datasets demonstrate that our approach outperforms existing methods with a remarkable margin. Our code is available athttps://github.com/ChrisAllenMing/LtC-MSDA.
+
+**Content introduction**
+
+https://blog.csdn.net/qq_41076797/article/details/120978951
+
+**Paper address**
+
+https://arxiv.org/abs/2007.08801
