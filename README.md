@@ -8,6 +8,8 @@ Welcome to visit my work space, I'm Yiyang Li, at least in the next three years 
 
 **PS.** This code base is based on **models**, which is more convenient for learning a single model. If you want to avoid cumbersome conventional code (such as data reading, etc.), you can visit the following link:https://github.com/CtrlZ1/Domain-Adaptive-CodeBase. It presents various domain adaptive codes in the form of projects.
 
+**关于代码**：由于各种原因不方便github公开，有需求者可加QQ合作:1005461421
+
 # Contents
 
 - [Domain-Adaptation-Algorithms](#Domain-Adaptation-Algorithms)
